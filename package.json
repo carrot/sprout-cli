@@ -5,6 +5,7 @@
   "contributors": [
     "Noah Portes Chaikin <noah.porteschaikin@carrotcreative.com>"
   ],
+  "description": "command-line interface for sprout",
   "license": "MIT",
   "repository": {
     "type": "git",
