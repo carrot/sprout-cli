@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - 0.10
+before_script:
+  - git config --global user.email "dev@carrotcreative.com"
+  - git config --global user.name "Carrot Creative"
+after_script:
+  - istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage
