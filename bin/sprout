@@ -79,14 +79,25 @@ run.setDefaults({ action: 'run' });
  * Parse arguments.
  */
 
-var args = parser.parseArgs();
+var args = parser.parseArgs()
+
+/*
+ * Remove constructor options
+ * from parsed arguments and
+ * add to an `options` object.
+ */
+
+var options = {};
+
+options.verbose = args.verbose;
+delete args.verbose;
 
 /*
  * Run CLI with arguments.
  */
 
-var cli = new CLI(args);
-cli.run().catch(
+var cli = new CLI(process.cwd(), options);
+cli.run(args).catch(
   function () {
     process.exit(1);
   }
