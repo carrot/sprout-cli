@@ -3,7 +3,8 @@
   "version": "0.0.3",
   "author": "Carrot Creative <dev@carrotcreative.com>",
   "contributors": [
-    "Noah Portes Chaikin <noah.porteschaikin@carrotcreative.com>"
+    "Noah Portes Chaikin <noah.porteschaikin@carrotcreative.com>",
+    "Kyle MacDonald <kyle@carrotcreative.com>"
   ],
   "description": "command-line interface for sprout",
   "license": "MIT",
