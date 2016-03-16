@@ -6,6 +6,7 @@
   "bin": {
     "sprout": "bin/sprout"
   },
+  "bugs": "https://github.com/carrot/sprout-cli/issues",
   "contributors": [
     "Noah Portes Chaikin <noah.porteschaikin@carrotcreative.com>",
     "Kyle MacDonald <kyle@carrotcreative.com>"
@@ -33,6 +34,7 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "homepage": "https://github.com/carrot/sprout-cli",
   "keywords": [
     "cli",
     "configuration",
@@ -42,6 +44,7 @@
     "templating"
   ],
   "license": "MIT",
+  "main": "lib",
   "repository": {
     "type": "git",
     "url": "https://github.com/carrot/sprout-cli"
