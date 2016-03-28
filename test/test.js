@@ -12,7 +12,7 @@ var fs = require('fs')
 var path = require('path')
 var rimraf = require('rimraf')
 var exec = require('child_process').exec
-var Promise = require('bluebird')
+var node = require('when/node')
 
 chai.should()
 
@@ -286,7 +286,7 @@ describe('commands',
               }
             ).then(
               function () {
-                return InitCommand(cli, {name: 'commands.init.config', target: target, config: path.join(fixture, 'config.json')})
+                return InitCommand(cli, {name: 'commands.init.config', target: target, configPath: path.join(fixture, 'config.json')})
               }
             ).then(
               function () {
@@ -434,18 +434,18 @@ describe('commands',
 
 describe('helpers',
   function () {
-    describe('isGitURL',
+    describe('isGitUrl',
       function () {
         it('should determine is git url',
           function (done) {
-            helpers.isGitURL('git@github.com:foo/bar').should.be.true
+            helpers.isGitUrl('git@github.com:foo/bar').should.be.true
             done()
           }
         )
 
         it('should determine is not git url',
           function (done) {
-            helpers.isGitURL('asdfadsfasdf').should.be.false
+            helpers.isGitUrl('asdfadsfasdf').should.be.false
             done()
           }
         )
@@ -508,5 +508,5 @@ describe('helpers',
  */
 
 var gitInit = function (dir) {
-  return Promise.promisify(exec)('git init .', { cwd: dir })
+  return node.call(exec, 'git init .', { cwd: dir })
 }
