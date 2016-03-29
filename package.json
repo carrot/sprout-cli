@@ -1,7 +1,7 @@
 {
   "name": "sprout-cli",
   "description": "command-line interface for sprout",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "author": "Carrot Creative <dev@carrotcreative.com>",
   "bin": {
     "sprout": "bin/sprout"
