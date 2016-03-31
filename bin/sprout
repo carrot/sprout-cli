@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 var CLI = require('./../lib')
-  , pkg = require('./../package.json')
-  , ArgParse = require('argparse').ArgumentParser;
+var pkg = require('./../package.json')
+var ArgParse = require('argparse').ArgumentParser
 
 /*
  * Create argument parser.
@@ -12,7 +12,7 @@ var parser = new ArgParse({
   version: pkg.version,
   description: pkg.description,
   addHelp: true
-});
+})
 
 /*
  * Create argument subparser.
@@ -21,59 +21,59 @@ var parser = new ArgParse({
 var subParser = parser.addSubparsers({
   title: 'Actions',
   dest: 'action'
-});
+})
 
 /*
  * $ sprout add
  */
 
-var add = subParser.addParser('add', { aliases: ['install'], addHelp: true });
-add.addArgument(['name'], { help: 'name of template' });
-add.addArgument(['src'], { help: 'source path or remote git' });
-add.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' });
-add.setDefaults({ action: 'add' });
+var add = subParser.addParser('add', { aliases: ['install'], addHelp: true })
+add.addArgument(['name'], { help: 'name of template' })
+add.addArgument(['src'], { help: 'source path or remote git' })
+add.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' })
+add.setDefaults({ action: 'add' })
 
 /*
  * $ sprout remove
  */
 
-var remove = subParser.addParser('remove', { aliases: ['delete', 'rm'], addHelp: true });
-remove.addArgument(['name'], { help: 'name of template' });
-remove.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' });
-remove.setDefaults({ action: 'remove' });
+var remove = subParser.addParser('remove', { aliases: ['delete', 'rm'], addHelp: true })
+remove.addArgument(['name'], { help: 'name of template' })
+remove.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' })
+remove.setDefaults({ action: 'remove' })
 
 /*
  * $ sprout list
  */
 
-var list = subParser.addParser('list', { aliases: ['ls', 'all'], addHelp: false });
-list.setDefaults({ action: 'list' });
+var list = subParser.addParser('list', { aliases: ['ls', 'all'], addHelp: false })
+list.setDefaults({ action: 'list' })
 
 /*
  * $ sprout init
  */
 
-var init = subParser.addParser('init', { aliases: ['new', 'create'], addHelp: true });
-init.addArgument(['name'], { help: 'name of template' });
-init.addArgument(['target'], { help: 'destination path' });
-init.addArgument(['-l', '--locals'], { nargs: '*', help: 'locals' });
-init.addArgument(['-t', '--tag'], { help: 'git tag' });
-init.addArgument(['-b', '--branch'], { help: 'git branch' });
-init.addArgument(['-c', '--config'], { help: 'a config file with pre-defined values (either json or yml/yaml)' });
-init.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' });
-init.setDefaults({ action: 'init' });
+var init = subParser.addParser('init', { aliases: ['new', 'create'], addHelp: true })
+init.addArgument(['name'], { help: 'name of template' })
+init.addArgument(['target'], { help: 'destination path' })
+init.addArgument(['-l', '--locals'], { nargs: '*', help: 'locals' })
+init.addArgument(['-t', '--tag'], { help: 'git tag' })
+init.addArgument(['-b', '--branch'], { help: 'git branch' })
+init.addArgument(['-c', '--config'], { help: 'a config file with pre-defined values (either json or yml/yaml)' })
+init.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' })
+init.setDefaults({ action: 'init' })
 
 /*
  * $ sprout run
  */
 
-var run = subParser.addParser('run', { aliases: ['generate'], addHelp: true });
-run.addArgument(['name'], { help: 'name of template' });
-run.addArgument(['generator'], { help: 'name of generator to run' });
-run.addArgument([], { nargs: '*', dest: 'args', help: 'arguments' });
-run.addArgument(['-t', '--target'], { help: 'destination path' });
-run.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' });
-run.setDefaults({ action: 'run' });
+var run = subParser.addParser('run', { aliases: ['generate'], addHelp: true })
+run.addArgument(['name'], { help: 'name of template' })
+run.addArgument(['generator'], { help: 'name of generator to run' })
+run.addArgument([], { nargs: '*', dest: 'args', help: 'arguments' })
+run.addArgument(['-t', '--target'], { help: 'destination path' })
+run.addArgument(['-v', '--verbose'], { action: 'storeTrue', help: 'verbose mode' })
+run.setDefaults({ action: 'run' })
 
 /*
  * Parse arguments.
@@ -87,18 +87,18 @@ var args = parser.parseArgs()
  * add to an `options` object.
  */
 
-var options = {};
+var options = {}
 
-options.verbose = args.verbose;
-delete args.verbose;
+options.verbose = args.verbose
+delete args.verbose
 
 /*
  * Run CLI with arguments.
  */
 
-var cli = new CLI(process.cwd(), options);
+var cli = new CLI(process.cwd(), options)
 cli.run(args).catch(
   function () {
-    process.exit(1);
+    process.exit(1)
   }
-);
+)
