@@ -1,7 +1,6 @@
 # sprout-cli
 
-[![npm](http://img.shields.io/npm/v/sprout-cli.svg?style=flat)](https://badge.fury.io/js/sprout-cli) [![tests](http://img.shields.io/travis/carrot/sprout-cli/master.svg?style=flat)](https://travis-ci.org/carrot/sprout-cli) [![coverage](http://img.shields.io/coveralls/carrot/sprout-cli.svg?style=flat)](https://coveralls.io/r/carrot/sprout-cli) [![dependencies](http://img.shields.io/gemnasium/carrot/sprout-cli.svg?style=flat)](https://gemnasium.com/carrot/sprout-cli)
-[![devDependencies](https://img.shields.io/david/dev/carrot/sprout-cli.svg)](https://gemnasium.com/carrot/sprout-cli)
+[![npm](http://img.shields.io/npm/v/sprout-cli.svg?style=flat)](https://badge.fury.io/js/sprout-cli) [![tests](http://img.shields.io/travis/carrot/sprout-cli/master.svg?style=flat)](https://travis-ci.org/carrot/sprout-cli) [![coverage](http://img.shields.io/coveralls/carrot/sprout-cli.svg?style=flat)](https://coveralls.io/r/carrot/sprout-cli) [![dependencies](http://img.shields.io/david/carrot/sprout-cli.svg?style=flat)](https://david-dm.org/carrot/sprout-cli)
 
 A command-line interface for [sprout](http://github.com/carrot/sprout).
 
