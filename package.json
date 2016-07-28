@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "coveralls": "2.11.10",
+    "coveralls": "2.11.12",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.3.0-beta2",
     "mocha": "^2.5.3",
