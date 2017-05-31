@@ -23,7 +23,7 @@
     "when": "^3.7.7"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.0.1",
     "coveralls": "2.11.15",
     "istanbul": "^0.4.3",
     "jsdoc": "^3.3.0-beta2",
